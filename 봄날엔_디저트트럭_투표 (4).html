@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봄날엔 캠퍼스 어택 🚚🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF6B9D;
+    --pink-light: #FFB3CE;
+    --pink-pale: #FFF0F6;
+    --yellow: #FFD93D;
+    --yellow-light: #FFF3B0;
+    --coral: #FF8C69;
+    --white: #FFFFFF;
+    --dark: #3D2C35;
+    --gray: #8A7A82;
+    --gray-light: #F9F0F4;
+    --shadow: 0 4px 20px rgba(255,107,157,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(160deg, #FFF0F6 0%, #FFF8E7 50%, #FFF0F6 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* FLOATING DECO */
+  .deco-float {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 28px;
+    opacity: 0.18;
+    animation: floatDeco 6s ease-in-out infinite;
+  }
+  .deco-float:nth-child(1) { top: 8%; left: 4%; animation-delay: 0s; }
+  .deco-float:nth-child(2) { top: 22%; right: 5%; animation-delay: 1.5s; }
+  .deco-float:nth-child(3) { top: 55%; left: 2%; animation-delay: 3s; }
+  .deco-float:nth-child(4) { top: 70%; right: 3%; animation-delay: 0.8s; }
+  .deco-float:nth-child(5) { top: 85%; left: 8%; animation-delay: 2s; }
+  @keyframes floatDeco {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-18px) rotate(5deg); }
+  }
+
+  /* HERO SECTION */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #FF6B9D 0%, #FF8C69 55%, #FFD93D 100%);
+    padding: 44px 20px 52px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* decorative glow behind title */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 160px;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* TOP BADGE */
+  .hero-badge-top {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.95);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 999px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* MAIN BRAND TITLE — 봄날엔 캠퍼스 어택 */
+  .hero-brand-block {
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .hero-brand-name {
+    display: block;
+    font-size: clamp(15px, 4.5vw, 22px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .hero-campus-attack {
+    display: block;
+    font-size: clamp(44px, 13vw, 76px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    /* big white-to-yellow gradient, pop */
+    background: linear-gradient(160deg, #ffffff 0%, #ffffff 50%, #FFE566 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 16px rgba(80,20,40,0.28)) drop-shadow(0 0 32px rgba(255,255,255,0.25));
+    position: relative;
+  }
+  /* outline stroke effect via text-shadow workaround */
+  .hero-campus-attack-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .hero-campus-attack-wrap::before {
+    content: '캠퍼스 어택';
+    position: absolute;
+    inset: 0;
+    font-size: clamp(44px, 13vw, 76px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    color: transparent;
+    -webkit-text-stroke: 6px rgba(180,40,80,0.25);
+    z-index: -1;
+  }
+
+  /* TRUCK + SUBTITLE */
+  .hero-truck-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px 0 6px;
+  }
+  .truck-emoji {
+    font-size: 52px;
+    display: inline-block;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.15));
+    animation: truckBounce 2.5s ease-in-out infinite;
+  }
+  @keyframes truckBounce {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  .hero-subtitle {
+    font-size: clamp(17px, 5vw, 24px);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(100,30,60,0.2);
+    line-height: 1.4;
+  }
+
+  /* BOTTOM TAGLINE */
+  .hero-bottom-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-tagline {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 900;
+    padding: 12px 28px;
+    border-radius: 999px;
+    box-shadow: 0 4px 18px rgba(255,217,61,0.55);
+    letter-spacing: 0.3px;
+  }
+  .hero-date {
+    display: inline-block;
+    background: rgba(255,255,255,0.22);
+    border: 2px solid rgba(255,255,255,0.45);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+  }
+  .hero-top3 {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.88);
+    font-weight: 700;
+  }
+
+  .container { max-width: 480px; margin: 0 auto; padding: 0 16px; position: relative; z-index: 1; }
+
+  /* EVENT INFO */
+  .section { margin: 24px 0; }
+  .card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    border: 2px solid rgba(255,107,157,0.08);
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--pink);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background: linear-gradient(to bottom, var(--pink), var(--yellow));
+    border-radius: 4px;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .info-label {
+    font-weight: 700;
+    color: var(--pink);
+    white-space: nowrap;
+    min-width: 76px;
+    font-size: 13px;
+  }
+  .info-value { color: var(--dark); font-weight: 500; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--pink-pale), var(--yellow-light));
+    border: 2px dashed var(--pink-light);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* VOTE SECTION */
+  .vote-header {
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    border-radius: 20px;
+    padding: 28px 20px 24px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .vote-header::after {
+    content: '🗳️';
+    position: absolute;
+    right: -8px;
+    bottom: -10px;
+    font-size: 80px;
+    opacity: 0.12;
+  }
+  .vote-header h2 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .vote-header p { font-size: 13px; opacity: 0.9; font-weight: 500; }
+
+  /* STEP */
+  .step-wrap { display: flex; flex-direction: column; gap: 18px; }
+  .step-item {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 2px 14px rgba(255,107,157,0.12);
+    border: 2px solid rgba(255,107,157,0.08);
+    position: relative;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(255,107,157,0.35);
+  }
+  .step-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pink);
+    letter-spacing: 1px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* SCHOOL SEARCH */
+  .school-search-wrap { position: relative; }
+  .school-input {
+    width: 100%;
+    padding: 14px 48px 14px 18px;
+    border: 2px solid var(--pink-light);
+    border-radius: 14px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--dark);
+    background: var(--pink-pale);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+  }
+  .school-input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px rgba(255,107,157,0.12);
+    background: #fff;
+  }
+  .school-input::placeholder { color: #C9A0B3; }
+  .search-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+  }
+  .school-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid var(--pink-light);
+    border-radius: 14px;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(255,107,157,0.18);
+    display: none;
+  }
+  .school-dropdown.show { display: block; }
+  .school-option {
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid rgba(255,107,157,0.08);
+  }
+  .school-option:last-child { border-bottom: none; }
+  .school-option:hover, .school-option.highlighted { background: var(--pink-pale); color: var(--pink); font-weight: 700; }
+  .school-option mark { background: none; color: var(--pink); font-weight: 900; }
+  .selected-school {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--pink-pale), var(--yellow-light));
+    border: 2px solid var(--pink-light);
+    border-radius: 12px;
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  .selected-school.show { display: flex; }
+  .selected-school .clear-btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1;
+  }
+
+  /* TEXT INPUTS */
+  .text-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--pink-light);
+    border-radius: 14px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--dark);
+    background: var(--pink-pale);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+  }
+  .text-input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px rgba(255,107,157,0.12);
+    background: #fff;
+  }
+  .text-input::placeholder { color: #C9A0B3; }
+
+  .input-hint {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* PRIVACY */
+  .privacy-note {
+    font-size: 12px;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* VOTE BUTTON */
+  .vote-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Noto Sans KR', sans-serif;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 6px 20px rgba(255,107,157,0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
+    letter-spacing: 0.5px;
+  }
+  .vote-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,157,0.45); }
+  .vote-btn:active { transform: translateY(0); }
+  .vote-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* SHARE */
+  .share-card {
+    background: linear-gradient(135deg, var(--yellow-light), #fff8e0);
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 4px 18px rgba(255,217,61,0.2);
+  }
+  .share-text { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.5; }
+  .share-btn {
+    background: linear-gradient(135deg, var(--yellow), #FFBA00);
+    color: var(--dark);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(255,186,0,0.3);
+    transition: transform 0.15s;
+  }
+  .share-btn:hover { transform: translateY(-1px); }
+
+  /* RANKING */
+  .podium {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    margin: 24px 0 20px;
+  }
+  .podium-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 130px;
+  }
+  .podium-school {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 6px;
+    line-height: 1.4;
+    word-break: keep-all;
+    min-height: 32px;
+  }
+  .podium-votes {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+  .podium-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px 12px 6px 6px;
+    font-size: 28px;
+    padding: 10px 6px;
+    font-weight: 900;
+    position: relative;
+  }
+  .podium-rank { font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 700; margin-top: 4px; }
+  .p1 .podium-block { height: 100px; background: linear-gradient(135deg, var(--yellow), #FFBA00); box-shadow: 0 6px 20px rgba(255,186,0,0.3); }
+  .p2 .podium-block { height: 75px; background: linear-gradient(135deg, var(--pink-light), var(--pink)); box-shadow: 0 4px 16px rgba(255,107,157,0.25); }
+  .p3 .podium-block { height: 58px; background: linear-gradient(135deg, #FFD1A4, var(--coral)); box-shadow: 0 4px 14px rgba(255,140,105,0.25); }
+  .p2 { order: -1; }
+
+  .rank-list { display: flex; flex-direction: column; gap: 8px; }
+  .rank-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(255,107,157,0.08);
+    transition: transform 0.15s;
+  }
+  .rank-item:hover { transform: translateX(4px); }
+  .rank-num {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-light);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+  .rank-school { font-size: 14px; font-weight: 700; flex: 1; color: var(--dark); }
+  .rank-votes { font-size: 13px; font-weight: 700; color: var(--pink); }
+  .rank-bar-wrap { flex: 1; height: 6px; background: var(--pink-pale); border-radius: 99px; overflow: hidden; }
+  .rank-bar { height: 100%; background: linear-gradient(to right, var(--pink), var(--yellow)); border-radius: 99px; transition: width 0.8s ease; }
+
+  /* TOTAL COUNT */
+  .total-count-section {
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    border-radius: 20px;
+    padding: 24px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .total-icon { font-size: 36px; margin-bottom: 8px; }
+  .total-num { font-size: 48px; font-weight: 900; line-height: 1; }
+  .total-label { font-size: 15px; font-weight: 700; margin-top: 4px; opacity: 0.9; }
+  .update-time { font-size: 12px; opacity: 0.75; margin-top: 8px; font-weight: 500; }
+
+  /* TABS */
+  .tab-wrap { display: flex; gap: 8px; margin-bottom: 16px; }
+  .tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--pink-light);
+    background: #fff;
+    border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 12px rgba(255,107,157,0.3);
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--dark);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 9999;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(61,44,53,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    max-width: 340px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .modal-emoji { font-size: 56px; margin-bottom: 12px; }
+  .modal-title { font-size: 20px; font-weight: 900; color: var(--dark); margin-bottom: 8px; }
+  .modal-desc { font-size: 14px; font-weight: 500; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+  .modal-school-name { color: var(--pink); font-weight: 900; }
+  .modal-close {
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(255,107,157,0.35);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--pink-light), transparent);
+    margin: 28px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 16px 36px;
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  /* Scrollbar */
+  .school-dropdown::-webkit-scrollbar { width: 6px; }
+  .school-dropdown::-webkit-scrollbar-track { background: transparent; }
+  .school-dropdown::-webkit-scrollbar-thumb { background: var(--pink-light); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<!-- Floating decoration -->
+<div class="deco-float">🌸</div>
+<div class="deco-float">🍓</div>
+<div class="deco-float">🌷</div>
+<div class="deco-float">🍰</div>
+<div class="deco-float">🌼</div>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- 상단 뱃지 -->
+  <div class="hero-badge-top">🏆 대학 대항전</div>
+
+  <!-- 메인 타이틀: 봄날엔 캠퍼스 어택 (강조) -->
+  <div class="hero-brand-block">
+    <span class="hero-brand-name">봄날엔</span>
+    <div class="hero-campus-attack-wrap">
+      <span class="hero-campus-attack">캠퍼스 어택</span>
+    </div>
+  </div>
+
+  <!-- 트럭 + 부제목 -->
+  <div class="hero-truck-row">
+    <span class="truck-emoji">🚚</span>
+    <span class="hero-subtitle">디저트 트럭이<br>찾아갑니다!</span>
+  </div>
+
+  <!-- 하단 그룹: 태그라인 + 날짜 + TOP3 -->
+  <div class="hero-bottom-group">
+    <div class="hero-tagline">🍰 우리 학교 투표하면 달콤한 간식이 온다!</div>
+    <div class="hero-date">📅 3월 16일(월) ~ 3월 29일(일)</div>
+    <div class="hero-top3">🏆 득표 수 TOP 3 대학교에 디저트트럭 방문!</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- EVENT INFO -->
+  <div class="section">
+    <div class="card">
+      <div class="section-title">이벤트 안내</div>
+      <p style="font-size:14px;font-weight:500;color:var(--dark);line-height:1.7;margin-bottom:16px;">
+        중간고사로 지친 봄나리들을 위해 🌿<br>
+        4월, <strong>봄날엔 디저트트럭</strong>이 달콤하게 찾아갑니다🚚✨<br>
+        지금 우리 학교에 투표하고, 달콤 가득 충전할 기회를 잡아보세요💛
+      </p>
+      <div class="info-row">
+        <div class="info-label">📅 투표 기간</div>
+        <div class="info-value">3월 16일(월) ~ 3월 29일(일)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">🙋 참여 대상</div>
+        <div class="info-value">봄날엔을 사랑하는 전국 대학생<br><span style="font-size:12px;color:var(--gray);">(재학생, 휴학생 가능 *졸업생 불가)</span></div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">🏫 대상 학교</div>
+        <div class="info-value">전국 모든 대학교</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">🎁 트럭 방문</div>
+        <div class="info-value">최종 투표 수 상위 3개 대학교에<br>디저트트럭 방문 + 봄날엔 제품 제공</div>
+      </div>
+      <div class="highlight-box">
+        🎉 투표 수가 많을수록<br>봄날엔 디저트트럭 방문 확률 <strong>UP! UP!</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOTE -->
+  <div class="section">
+    <div class="vote-header">
+      <h2>🗳️ 투표하고 우리 대학교<br>순위 올리자!</h2>
+      <p>매일 투표할 수 있어요!</p>
+    </div>
+
+    <div class="step-wrap">
+      <!-- STEP 1 -->
+      <div class="step-item">
+        <div>
+          <span class="step-num">1</span>
+          <span class="step-label">STEP · 학교 선택</span>
+        </div>
+        <div class="school-search-wrap" style="margin-top:12px;">
+          <input type="text" class="school-input" id="schoolInput" placeholder="학교명을 검색하세요 (예: 건국대)" autocomplete="off">
+          <span class="search-icon">🔍</span>
+          <div class="school-dropdown" id="schoolDropdown"></div>
+        </div>
+        <div class="selected-school" id="selectedSchoolBox">
+          <span>🏫</span>
+          <span id="selectedSchoolName"></span>
+          <span class="clear-btn" id="clearSchool">✕</span>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-item">
+        <div>
+          <span class="step-num">2</span>
+          <span class="step-label">STEP · 이름</span>
+        </div>
+        <input type="text" class="text-input" id="nameInput" placeholder="이름을 입력하세요" style="margin-top:12px;">
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-item">
+        <div>
+          <span class="step-num">3</span>
+          <span class="step-label">STEP · 전화번호</span>
+        </div>
+        <input type="tel" class="text-input" id="phoneInput" placeholder="010-0000-0000" style="margin-top:12px;">
+        <div class="input-hint">* 숫자만 입력해도 됩니다 (예: 01012345678)</div>
+      </div>
+    </div>
+
+    <p class="privacy-note">* 투표 참여 시 개인정보 수집·이용에 동의한 것으로 간주됩니다.<br>수집된 정보는 이벤트 운영 목적으로만 사용됩니다.</p>
+    <button class="vote-btn" id="voteBtn" onclick="submitVote()">🌸 투표하기</button>
+  </div>
+
+  <!-- SHARE -->
+  <div class="section">
+    <div class="share-card">
+      <div class="share-text">🎀 친구에게 이 이벤트를<br>공유해주세요!</div>
+      <button class="share-btn" onclick="shareEvent()">📤 공유하기</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RANKING -->
+  <div class="section">
+    <div class="section-title" style="margin-bottom:8px;">👑 실시간 순위</div>
+
+    <div class="tab-wrap">
+      <button class="tab-btn active" id="tab-top3" onclick="switchTab('top3')">🏆 TOP 3 단상</button>
+      <button class="tab-btn" id="tab-all" onclick="switchTab('all')">📋 전체 순위</button>
+    </div>
+
+    <!-- TOP 3 PODIUM -->
+    <div id="top3View">
+      <div class="podium" id="podium"></div>
+    </div>
+
+    <!-- ALL RANKING -->
+    <div id="allView" style="display:none;">
+      <div class="rank-list" id="rankList"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TOTAL -->
+  <div class="section">
+    <div class="total-count-section">
+      <div class="total-icon">🌸</div>
+      <div class="total-num" id="totalNum">0</div>
+      <div class="total-label">명이 참여했어요!</div>
+      <div class="update-time" id="updateTime">마지막 업데이트: --:--:--</div>
+      <div style="margin-top:10px;">
+        <button onclick="refreshData()" style="background:rgba(255,255,255,0.25);color:#fff;border:2px solid rgba(255,255,255,0.5);border-radius:10px;padding:8px 20px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;">🔄 새로고침</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  🚚 봄날엔 캠퍼스 어택 대학 대항전<br>
+  ⓒ 2025 봄날엔. All rights reserved.
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-emoji">🎉</div>
+    <div class="modal-title">투표 완료!</div>
+    <div class="modal-desc" id="modalDesc">투표가 완료되었어요!<br>우리 학교 파이팅! 🌸</div>
+    <button class="modal-close" onclick="closeModal()">확인했어요!</button>
+  </div>
+</div>
+
+<script>
+// ==============================
+// 전국 대학교 목록 (가나다 순)
+// ==============================
+const UNIVERSITIES = [
+  "가야대학교","가천대학교","가톨릭관동대학교","가톨릭꽃동네대학교","가톨릭대학교","가톨릭상지대학교","가톨릭신학대학교",
+  "강남대학교","강동대학교","강릉원주대학교","강서대학교","강원대학교","강원관광대학교","거제대학교","건국대학교","건국대학교(글로컬)","건양대학교","경기대학교","경남대학교","경남도립거창대학교","경남도립남해대학교","경남정보대학교","경동대학교","경북대학교","경북과학대학교","경북도립대학교","경북전문대학교","경상국립대학교","경성대학교","경운대학교","경인교육대학교","경일대학교","경주대학교","경희대학교","계명대학교","계명문화대학교","고려대학교","고려대학교(세종)","고신대학교","공주교육대학교","공주대학교","광신대학교","광양보건대학교","광운대학교","광주가톨릭대학교","광주교육대학교","광주대학교","광주여자대학교","구미대학교","국민대학교","군산대학교","군장대학교","극동대학교","금오공과대학교","금천대학교","기독간호대학교","나사렛대학교","남부대학교","남서울대학교","남원대학교","농협대학교","단국대학교","단국대학교(천안)","대구가톨릭대학교","대구경북과학기술원","대구과학대학교","대구교육대학교","대구대학교","대구보건대학교","대구예술대학교","대구한의대학교","대덕대학교","대동대학교","대전가톨릭대학교","대전과학기술대학교","대전대학교","대전신학대학교","대진대학교","덕성여자대학교","동강대학교","동국대학교","동국대학교(경주)","동덕여자대학교","동명대학교","동서대학교","동신대학교","동아대학교","동아방송예술대학교","동양대학교","동우대학교","동의과학대학교","동의대학교","동주대학교","두원공과대학교","디지털서울문화예술대학교","목원대학교","목포가톨릭대학교","목포대학교","목포해양대학교","문경대학교","문화예술대학원대학교","배재대학교","백석대학교","백석문화대학교","법무연수원대학원대학교","벽성대학교","부경대학교","부산가톨릭대학교","부산경상대학교","부산교육대학교","부산대학교","부산디지털대학교","부산외국어대학교","부산장신대학교","부산진전문학교","부천대학교","삼육대학교","삼육보건대학교","상명대학교","상명대학교(천안)","상지대학교","서강대학교","서경대학교","서울과학기술대학교","서울교육대학교","서울기독대학교","서울대학교","서울디지털대학교","서울사이버대학교","서울시립대학교","서울신학대학교","서울여자간호대학교","서울여자대학교","서울장신대학교","서울한양대학교","서원대학교","서울한영대학교","선문대학교","성결대학교","성공회대학교","성균관대학교","성신여자대학교","세명대학교","세종대학교","세한대학교","송원대학교","수원가톨릭대학교","수원대학교","수원여자대학교","숙명여자대학교","숙명여대","순천대학교","순천향대학교","숭실대학교","시립인천대학교","신경대학교","신라대학교","신한대학교","아주대학교","안동대학교","안양대학교","애니메이션고등학교","연세대학교","연세대학교(미래)","영남대학교","영남신학대학교","영남외국어대학교","영동대학교","영산대학교","영산선학대학교","용인대학교","우석대학교","우송대학교","우송정보대학교","울산대학교","울산과학기술원","원광대학교","원광보건대학교","위덕대학교","유원대학교","을지대학교","이화여자대학교","인덕대학교","인제대학교","인천가톨릭대학교","인천대학교","인하대학교","장로회신학대학교","전남대학교","전북대학교","전주교육대학교","전주대학교","제주관광대학교","제주국제대학교","제주대학교","조선간호대학교","조선대학교","중부대학교","중원대학교","중앙대학교","중앙신학대학원대학교","진주교육대학교","차의과학대학교","창신대학교","창원대학교","청운대학교","청주교육대학교","청주대학교","체육대학교","초당대학교","춘천교육대학교","충남대학교","충북대학교","침례신학대학교","칼빈대학교","케이씨대학교","탐라대학교","포항공과대학교","평택대학교","한경국립대학교","한경대학교","한국감정원대학교","한국공학대학교","한국교원대학교","한국교통대학교","한국기술교육대학교","한국방송통신대학교","한국사이버대학교","한국산업기술대학교","한국성서대학교","한국예술종합학교","한국외국어대학교","한국체육대학교","한국항공대학교","한국해양대학교","한남대학교","한동대학교","한라대학교","한려대학교","한림대학교","한서대학교","한성대학교","한세대학교","한신대학교","한양대학교","한양사이버대학교","한양여자대학교","한영신학대학교","해군사관학교","협성대학교","호남대학교","호남신학대학교","호서대학교","호원대학교","홍익대학교","화성의과학대학교","황해대학교"
+];
+
+// State
+let voteData = {};
+let selectedSchool = '';
+let totalVotes = 0;
+let currentTab = 'top3';
+
+// Init
+function init() {
+  loadFromStorage();
+  renderRanking();
+  updateTotal();
+  updateTime();
+}
+
+function loadFromStorage() {
+  try {
+    const saved = localStorage.getItem('campusVoteData');
+    if (saved) voteData = JSON.parse(saved);
+    totalVotes = Object.values(voteData).reduce((a, b) => a + b, 0);
+  } catch(e) { voteData = {}; }
+}
+
+function saveToStorage() {
+  try { localStorage.setItem('campusVoteData', JSON.stringify(voteData)); } catch(e) {}
+}
+
+// School search
+const schoolInput = document.getElementById('schoolInput');
+const dropdown = document.getElementById('schoolDropdown');
+let highlightIdx = -1;
+let filtered = [];
+
+schoolInput.addEventListener('input', function() {
+  const val = this.value.trim();
+  if (!val) { hideDropdown(); return; }
+
+  const lower = val.replace(/\s/g, '').toLowerCase();
+  filtered = UNIVERSITIES.filter(u =>
+    u.replace(/\s/g, '').toLowerCase().includes(lower) ||
+    u.includes(val)
+  ).slice(0, 12);
+
+  if (!filtered.length) { hideDropdown(); return; }
+
+  dropdown.innerHTML = filtered.map((u, i) => {
+    const marked = u.replace(new RegExp(`(${val})`, 'gi'), '<mark>$1</mark>');
+    return `<div class="school-option" data-idx="${i}" onclick="selectSchool('${u}')">${marked}</div>`;
+  }).join('');
+  dropdown.classList.add('show');
+  highlightIdx = -1;
+});
+
+schoolInput.addEventListener('keydown', function(e) {
+  const opts = dropdown.querySelectorAll('.school-option');
+  if (e.key === 'ArrowDown') {
+    highlightIdx = Math.min(highlightIdx + 1, opts.length - 1);
+    opts.forEach((o, i) => o.classList.toggle('highlighted', i === highlightIdx));
+  } else if (e.key === 'ArrowUp') {
+    highlightIdx = Math.max(highlightIdx - 1, 0);
+    opts.forEach((o, i) => o.classList.toggle('highlighted', i === highlightIdx));
+  } else if (e.key === 'Enter' && highlightIdx >= 0 && filtered[highlightIdx]) {
+    selectSchool(filtered[highlightIdx]);
+  } else if (e.key === 'Escape') {
+    hideDropdown();
+  }
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.school-search-wrap')) hideDropdown();
+});
+
+function hideDropdown() {
+  dropdown.classList.remove('show');
+  dropdown.innerHTML = '';
+  filtered = [];
+}
+
+function selectSchool(name) {
+  selectedSchool = name;
+  schoolInput.value = '';
+  schoolInput.placeholder = '학교 선택 완료 ✓';
+  document.getElementById('selectedSchoolName').textContent = name;
+  document.getElementById('selectedSchoolBox').classList.add('show');
+  hideDropdown();
+}
+
+document.getElementById('clearSchool').addEventListener('click', function() {
+  selectedSchool = '';
+  schoolInput.value = '';
+  schoolInput.placeholder = '학교명을 검색하세요 (예: 건국대)';
+  document.getElementById('selectedSchoolBox').classList.remove('show');
+});
+
+// VOTE
+function submitVote() {
+  const name = document.getElementById('nameInput').value.trim();
+  const phone = document.getElementById('phoneInput').value.trim();
+
+  if (!selectedSchool) { showToast('학교를 선택해주세요! 🏫'); return; }
+  if (!name) { showToast('이름을 입력해주세요! 😊'); return; }
+  if (!phone) { showToast('전화번호를 입력해주세요! 📞'); return; }
+  const cleanPhone = phone.replace(/[^0-9]/g, '');
+  if (cleanPhone.length < 10 || cleanPhone.length > 11) {
+    showToast('올바른 전화번호를 입력해주세요! 📞'); return;
+  }
+
+  const btn = document.getElementById('voteBtn');
+  btn.disabled = true;
+  btn.textContent = '투표 중...';
+
+  setTimeout(() => {
+    voteData[selectedSchool] = (voteData[selectedSchool] || 0) + 1;
+    totalVotes++;
+    saveToStorage();
+    renderRanking();
+    updateTotal();
+
+    const formattedPhone = cleanPhone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+    logVote(name, formattedPhone, selectedSchool);
+
+    document.getElementById('modalDesc').innerHTML =
+      `<span class="modal-school-name">${selectedSchool}</span>에 투표했어요!<br>우리 학교 파이팅! 🌸🎉`;
+    document.getElementById('modalOverlay').classList.add('show');
+
+    document.getElementById('nameInput').value = '';
+    document.getElementById('phoneInput').value = '';
+    selectedSchool = '';
+    schoolInput.placeholder = '학교명을 검색하세요 (예: 건국대)';
+    document.getElementById('selectedSchoolBox').classList.remove('show');
+
+    btn.disabled = false;
+    btn.textContent = '🌸 투표하기';
+    updateTime();
+  }, 800);
+}
+
+function logVote(name, phone, school) {
+  // 투표 데이터 기록 (콘솔 + localStorage)
+  const record = { timestamp: new Date().toISOString(), name, phone, school };
+  let records = [];
+  try {
+    const saved = localStorage.getItem('voteRecords');
+    if (saved) records = JSON.parse(saved);
+  } catch(e) {}
+  records.push(record);
+  try { localStorage.setItem('voteRecords', JSON.stringify(records)); } catch(e) {}
+  console.log('투표 기록:', record);
+}
+
+// RANKING
+function getSortedSchools() {
+  return Object.entries(voteData).sort((a, b) => b[1] - a[1]);
+}
+
+function renderRanking() {
+  const sorted = getSortedSchools();
+  const maxVotes = sorted.length > 0 ? sorted[0][1] : 1;
+
+  // Podium
+  const podium = document.getElementById('podium');
+  const medals = ['🥇','🥈','🥉'];
+  const orders = [1, 0, 2]; // 2nd, 1st, 3rd display
+  const podiumClasses = ['p2','p1','p3'];
+
+  if (sorted.length === 0) {
+    podium.innerHTML = `<div style="text-align:center;color:var(--gray);font-size:14px;font-weight:500;width:100%;padding:30px 0;">아직 투표가 없어요! 첫 번째로 투표해보세요 🌸</div>`;
+  } else {
+    const podiumItems = orders.map((rank, di) => {
+      const item = sorted[rank];
+      if (!item) return `<div class="podium-item ${podiumClasses[di]}"><div class="podium-block"><span style="font-size:18px;opacity:0.3">-</span></div></div>`;
+      return `
+        <div class="podium-item ${podiumClasses[di]}">
+          <div class="podium-school">${item[0]}</div>
+          <div class="podium-votes">${item[1].toLocaleString()}표</div>
+          <div class="podium-block">
+            <span>${medals[rank]}</span>
+            <div class="podium-rank">${rank + 1}위</div>
+          </div>
+        </div>`;
+    });
+    podium.innerHTML = podiumItems.join('');
+  }
+
+  // Rank list
+  const rankList = document.getElementById('rankList');
+  if (sorted.length === 0) {
+    rankList.innerHTML = `<div style="text-align:center;color:var(--gray);font-size:14px;font-weight:500;padding:30px 0;">아직 투표가 없어요! 🌸</div>`;
+  } else {
+    rankList.innerHTML = sorted.map((item, i) => {
+      const pct = Math.round((item[1] / maxVotes) * 100);
+      return `
+        <div class="rank-item">
+          <div class="rank-num">${i + 1}</div>
+          <div class="rank-school">${item[0]}</div>
+          <div class="rank-bar-wrap"><div class="rank-bar" style="width:${pct}%"></div></div>
+          <div class="rank-votes">${item[1].toLocaleString()}표</div>
+        </div>`;
+    }).join('');
+  }
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('top3View').style.display = tab === 'top3' ? 'block' : 'none';
+  document.getElementById('allView').style.display = tab === 'all' ? 'block' : 'none';
+  document.getElementById('tab-top3').classList.toggle('active', tab === 'top3');
+  document.getElementById('tab-all').classList.toggle('active', tab === 'all');
+}
+
+function updateTotal() {
+  const el = document.getElementById('totalNum');
+  const target = totalVotes;
+  let current = parseInt(el.textContent.replace(/,/g, '')) || 0;
+  const step = Math.max(1, Math.ceil((target - current) / 20));
+  const interval = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current.toLocaleString();
+    if (current >= target) clearInterval(interval);
+  }, 30);
+}
+
+function updateTime() {
+  const now = new Date();
+  const time = now.toTimeString().slice(0, 8);
+  document.getElementById('updateTime').textContent = `마지막 업데이트: ${time}`;
+}
+
+function refreshData() {
+  loadFromStorage();
+  renderRanking();
+  updateTotal();
+  updateTime();
+  showToast('새로고침 완료! 🔄');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+function shareEvent() {
+  if (navigator.share) {
+    navigator.share({
+      title: '봄날엔 캠퍼스 어택 대학 대항전',
+      text: '우리 학교 투표하면 달콤한 디저트트럭이 온다! 지금 투표해요 🚚🌸',
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      showToast('링크가 복사됐어요! 친구에게 공유해보세요 📤');
+    }).catch(() => showToast('주소창에서 링크를 복사해서 공유해주세요! 📤'));
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+// Demo data
+if (!localStorage.getItem('campusVoteData')) {
+  voteData = {
+    '건국대학교': 600, '연세대학교': 520, '한양대학교': 480,
+    '고려대학교': 450, '이화여자대학교': 410, '서울대학교': 390,
+    '성균관대학교': 360, '홍익대학교': 320, '중앙대학교': 290,
+    '경희대학교': 260
+  };
+  totalVotes = Object.values(voteData).reduce((a, b) => a + b, 0);
+}
+
+init();
+</script>
+</body>
+</html>
